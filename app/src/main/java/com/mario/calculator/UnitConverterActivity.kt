@@ -6,6 +6,9 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.text.NumberFormat
+import java.text.ParseException
+import java.util.Locale
 
 class UnitConverterActivity : AppCompatActivity() {
 
@@ -141,8 +144,13 @@ class UnitConverterActivity : AppCompatActivity() {
     }
 
     private fun recalculate() {
-        val input = etFromValue.text.toString().toDoubleOrNull()
-        if (input == null) { tvToValue.text = "—"; return }
+        val text = etFromValue.text.toString().trim()
+        val input: Double? = if (text.isEmpty()) null else try {
+            NumberFormat.getInstance(Locale.getDefault()).parse(text)?.toDouble()
+        } catch (e: ParseException) {
+            null
+        }
+        if (input == null) { tvToValue.text = getString(R.string.placeholder_em_dash); return }
 
         val unitList = units[currentCategory] ?: return
         val fromIdx = spinnerFromUnit.selectedItemPosition
@@ -178,7 +186,7 @@ class UnitConverterActivity : AppCompatActivity() {
     }
 
     private fun formatResult(value: Double): String {
-        if (value.isNaN() || value.isInfinite()) return "Error"
+        if (value.isNaN() || value.isInfinite()) return getString(R.string.conversion_error)
         val long = value.toLong()
         return if (value == long.toDouble() && kotlin.math.abs(value) < 1e12) {
             long.toString()

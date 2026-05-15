@@ -13,6 +13,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    <string name="placeholder_em_dash">—</string>
+    <string name="conversion_error">Error</string>
     <string name="help_label">HELP</string>
     <string name="back_label">← BACK</string>
     <string name="unit_converter_title">UNIT CONVERTER</string>

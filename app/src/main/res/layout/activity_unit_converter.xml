@@ -77,7 +77,7 @@
             android:layout_weight="1"
             android:background="@drawable/bg_display"
             android:textColor="@color/color_white"
-            android:textColorHint="#888888"
+            android:textColorHint="@color/color_hint"
             android:hint="0"
             android:inputType="numberDecimal|numberSigned"
             android:textSize="18sp"
@@ -90,7 +90,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#333333"
+        android:background="@color/color_divider_subtle"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="14dp" />
 

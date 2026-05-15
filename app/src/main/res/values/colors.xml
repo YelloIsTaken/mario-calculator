@@ -37,6 +37,11 @@
     <color name="btn_nav_pressed">#1A5A1A</color>
     <color name="btn_nav_border">#0A4A0A</color>
 
+    <!-- Miscellaneous UI -->
+    <color name="color_help_text">#CCCCCC</color>
+    <color name="color_hint">#888888</color>
+    <color name="color_divider_subtle">#333333</color>
+
     <!-- Equals button (slightly different gold) -->
     <color name="btn_equals_bg">#B88010</color>
     <color name="btn_equals_pressed">#906000</color>

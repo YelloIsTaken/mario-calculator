@@ -47,18 +47,19 @@ class CalculatorEngine {
     fun inputOperator(op: String) {
         if (errorState) return
         if (pendingOperator != null && currentInput.isNotEmpty() && !justCalculated) {
-            val result = applyOp(previousValue, currentInput.toString().toDouble(), pendingOperator!!)
+            val rhs = currentInputToDouble() ?: return
+            val result = applyOp(previousValue, rhs, pendingOperator!!)
             if (result == null) {
                 displayValue = "Error"
                 errorState = true
                 return
             }
-            val entry = "${formatNum(previousValue)} $pendingOperator ${formatNum(currentInput.toString().toDouble())} = ${formatNum(result)}"
+            val entry = "${formatNum(previousValue)} $pendingOperator ${formatNum(rhs)} = ${formatNum(result)}"
             history.add(entry)
             previousValue = result
             displayValue = formatNum(result)
         } else if (currentInput.isNotEmpty()) {
-            previousValue = currentInput.toString().toDouble()
+            previousValue = currentInputToDouble() ?: return
         } else if (justCalculated) {
             // previousValue already set from last result
         } else {
@@ -72,7 +73,7 @@ class CalculatorEngine {
 
     fun equals() {
         if (errorState || pendingOperator == null) return
-        val rhs = if (currentInput.isNotEmpty()) currentInput.toString().toDouble() else previousValue
+        val rhs = if (currentInput.isNotEmpty()) currentInputToDouble() ?: return else previousValue
         val result = applyOp(previousValue, rhs, pendingOperator!!)
         if (result == null) {
             displayValue = "Error"
@@ -159,7 +160,18 @@ class CalculatorEngine {
     }
 
     private fun currentValue(): Double =
-        if (currentInput.isNotEmpty()) currentInput.toString().toDouble() else previousValue
+        if (currentInput.isNotEmpty()) currentInput.toString().toDoubleOrNull() ?: 0.0 else previousValue
+
+    private fun currentInputToDouble(): Double? {
+        val v = currentInput.toString().toDoubleOrNull()
+        if (v == null) {
+            currentInput.clear()
+            hasDecimal = false
+            displayValue = "Error"
+            errorState = true
+        }
+        return v
+    }
 
     private fun parseDisplay(): Double =
         displayValue.toDoubleOrNull() ?: 0.0
