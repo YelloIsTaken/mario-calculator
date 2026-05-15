@@ -1,5 +1,6 @@
 package com.mario.calculator
 
+import java.util.Locale
 import kotlin.math.abs
 
 class CalculatorEngine {
@@ -146,6 +147,17 @@ class CalculatorEngine {
 
     fun formatMemory(): String = formatNum(memoryValue)
 
+    fun restoreState(display: String, memory: Double, historyList: List<String>) {
+        displayValue = display
+        memoryValue = memory
+        history.clear()
+        history.addAll(historyList)
+        currentInput.clear()
+        if (display != "0" && display != "Error") currentInput.append(display)
+        hasDecimal = display.contains(".")
+        errorState = display == "Error"
+    }
+
     private fun currentValue(): Double =
         if (currentInput.isNotEmpty()) currentInput.toString().toDouble() else previousValue
 
@@ -167,7 +179,7 @@ class CalculatorEngine {
             long.toString()
         } else {
             val s = value.toBigDecimal().stripTrailingZeros().toPlainString()
-            if (s.length > 12) "%.6G".format(value) else s
+            if (s.length > 12) String.format(Locale.US, "%.6G", value) else s
         }
     }
 }

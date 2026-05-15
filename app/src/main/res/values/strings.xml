@@ -13,6 +13,13 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    <string name="help_label">HELP</string>
+    <string name="back_label">← BACK</string>
+    <string name="unit_converter_title">UNIT CONVERTER</string>
+    <string name="unit_converter_category_label">Category:</string>
+    <string name="unit_converter_from_label">FROM</string>
+    <string name="unit_converter_to_label">TO</string>
+
     <string name="help_content"><![CDATA[
 MARIO CALCULATOR — BUTTON GUIDE
 

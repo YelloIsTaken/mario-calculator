@@ -78,7 +78,6 @@ class UnitConverterActivity : AppCompatActivity() {
     private lateinit var tvToValue: TextView
 
     private var currentCategory = "Length"
-    private var isUpdating = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,7 +141,6 @@ class UnitConverterActivity : AppCompatActivity() {
     }
 
     private fun recalculate() {
-        if (isUpdating) return
         val input = etFromValue.text.toString().toDoubleOrNull()
         if (input == null) { tvToValue.text = "—"; return }
 

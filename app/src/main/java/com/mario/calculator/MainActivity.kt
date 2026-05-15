@@ -13,6 +13,12 @@ class MainActivity : AppCompatActivity() {
 
     private val engine = CalculatorEngine()
 
+    companion object {
+        private const val KEY_DISPLAY = "display"
+        private const val KEY_MEMORY = "memory"
+        private const val KEY_HISTORY = "history"
+    }
+
     private lateinit var tvDisplay: TextView
     private lateinit var tvMemoryValue: TextView
     private lateinit var tvHistory: TextView
@@ -28,6 +34,24 @@ class MainActivity : AppCompatActivity() {
         svHistory = findViewById(R.id.sv_history)
 
         bindButtons()
+
+        if (savedInstanceState != null) {
+            engine.restoreState(
+                savedInstanceState.getString(KEY_DISPLAY, "0")!!,
+                savedInstanceState.getDouble(KEY_MEMORY, 0.0),
+                savedInstanceState.getStringArrayList(KEY_HISTORY) ?: arrayListOf()
+            )
+            updateDisplay()
+            updateMemory()
+            updateHistory()
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_DISPLAY, engine.displayValue)
+        outState.putDouble(KEY_MEMORY, engine.memoryValue)
+        outState.putStringArrayList(KEY_HISTORY, ArrayList(engine.history))
     }
 
     private fun bindButtons() {

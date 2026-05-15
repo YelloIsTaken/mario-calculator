@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UNIT CONVERTER"
+        android:text="@string/unit_converter_title"
         android:textColor="@color/color_cyan"
         android:textSize="20sp"
         android:fontFamily="monospace"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Category:"
+        android:text="@string/unit_converter_category_label"
         android:textColor="@color/color_green"
         android:textSize="13sp"
         android:fontFamily="monospace"
@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FROM"
+        android:text="@string/unit_converter_from_label"
         android:textColor="@color/color_cyan"
         android:textSize="13sp"
         android:fontFamily="monospace"
@@ -98,7 +98,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TO"
+        android:text="@string/unit_converter_to_label"
         android:textColor="@color/color_cyan"
         android:textSize="13sp"
         android:fontFamily="monospace"
@@ -149,7 +149,7 @@
         android:id="@+id/btn_back"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="← BACK"
+        android:text="@string/back_label"
         android:textColor="@color/color_white"
         android:textSize="15sp"
         android:fontFamily="monospace"

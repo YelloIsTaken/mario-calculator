@@ -15,6 +15,23 @@ class MarioView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
+    companion object {
+        private val COLOR_BG              = Color.parseColor("#080E1C")
+        private val COLOR_STAR            = Color.parseColor("#FFFFCC")
+        private val COLOR_PIPE_DARK       = Color.parseColor("#007700")
+        private val COLOR_PIPE_LIGHT      = Color.parseColor("#00AA00")
+        private val COLOR_PIPE_EDGE       = Color.parseColor("#00CC00")
+        private val COLOR_PLATFORM_BASE   = Color.parseColor("#4878C0")
+        private val COLOR_PLATFORM_BRICK  = Color.parseColor("#2858A0")
+        private val COLOR_PLATFORM_TOP    = Color.parseColor("#90B8F0")
+        private val COLOR_MARIO_RED       = Color.parseColor("#CC2200")
+        private val COLOR_MARIO_SKIN      = Color.parseColor("#FFBB88")
+        private val COLOR_MARIO_EYES      = Color.parseColor("#111111")
+        private val COLOR_MARIO_MUSTACHE  = Color.parseColor("#884400")
+        private val COLOR_MARIO_OVERALLS  = Color.parseColor("#0033BB")
+        private val COLOR_MARIO_SHOES     = Color.parseColor("#4A2800")
+    }
+
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var marioX = 0f
     private var walkFrame = 0
@@ -57,20 +74,20 @@ class MarioView @JvmOverloads constructor(
         val platformH = h * 0.38f
         val platformY = h - platformH
 
-        drawBackground(canvas, w, h, platformY)
+        drawBackground(canvas, w, h)
         drawStars(canvas, w, platformY)
         drawPipe(canvas, w, h, platformH, platformY)
         drawPlatform(canvas, w, h, platformY, platformH)
         drawMario(canvas, marioX, platformY, platformH)
     }
 
-    private fun drawBackground(canvas: Canvas, w: Float, h: Float, platformY: Float) {
-        paint.color = Color.parseColor("#080E1C")
+    private fun drawBackground(canvas: Canvas, w: Float, h: Float) {
+        paint.color = COLOR_BG
         canvas.drawRect(0f, 0f, w, h, paint)
     }
 
     private fun drawStars(canvas: Canvas, w: Float, platformY: Float) {
-        paint.color = Color.parseColor("#FFFFCC")
+        paint.color = COLOR_STAR
         val px = dpToPx(2f)
         starPositions.forEach { (xr, yr) ->
             val sx = xr * w
@@ -86,49 +103,40 @@ class MarioView @JvmOverloads constructor(
         val bodyTop = platformY * 0.30f
         val capTop = bodyTop - capH
 
-        // Pipe body
-        paint.color = Color.parseColor("#007700")
+        paint.color = COLOR_PIPE_DARK
         canvas.drawRect(pipeX, bodyTop, pipeX + pipeW, platformY, paint)
-        // Body highlight
-        paint.color = Color.parseColor("#00AA00")
+        paint.color = COLOR_PIPE_LIGHT
         canvas.drawRect(pipeX + 2f, bodyTop, pipeX + pipeW * 0.35f, platformY, paint)
 
-        // Pipe cap (wider)
         val capX = pipeX - pipeW * 0.15f
-        paint.color = Color.parseColor("#007700")
+        paint.color = COLOR_PIPE_DARK
         canvas.drawRect(capX, capTop, capX + pipeW * 1.3f, bodyTop, paint)
-        paint.color = Color.parseColor("#00AA00")
+        paint.color = COLOR_PIPE_LIGHT
         canvas.drawRect(capX + 2f, capTop, capX + pipeW * 0.45f, bodyTop, paint)
-        // Cap top edge
-        paint.color = Color.parseColor("#00CC00")
+        paint.color = COLOR_PIPE_EDGE
         canvas.drawRect(capX, capTop, capX + pipeW * 1.3f, capTop + dpToPx(2f), paint)
     }
 
     private fun drawPlatform(canvas: Canvas, w: Float, h: Float, platformY: Float, platformH: Float) {
-        // Base fill
-        paint.color = Color.parseColor("#4878C0")
+        paint.color = COLOR_PLATFORM_BASE
         canvas.drawRect(0f, platformY, w, h, paint)
 
-        // Brick rows
         val brickW = w / 9f
         val brickH = platformH / 2f
-        paint.color = Color.parseColor("#2858A0")
+        paint.color = COLOR_PLATFORM_BRICK
 
-        // Row 1
         var bx = 0f
         while (bx < w) {
             canvas.drawRect(bx, platformY, bx + brickW - dpToPx(1f), platformY + brickH - dpToPx(1f), paint)
             bx += brickW
         }
-        // Row 2 (offset)
         bx = -brickW / 2f
         while (bx < w) {
             canvas.drawRect(bx, platformY + brickH, bx + brickW - dpToPx(1f), h - dpToPx(1f), paint)
             bx += brickW
         }
 
-        // Top highlight edge
-        paint.color = Color.parseColor("#90B8F0")
+        paint.color = COLOR_PLATFORM_TOP
         canvas.drawRect(0f, platformY, w, platformY + dpToPx(2f), paint)
     }
 
@@ -136,43 +144,32 @@ class MarioView @JvmOverloads constructor(
         val spriteH = platformH * 0.88f
         val s = spriteH / 16f
         val y = platformY - spriteH
-
         val isWalking = walkFrame == 1 || walkFrame == 3
 
-        // Red cap
-        paint.color = Color.parseColor("#CC2200")
+        paint.color = COLOR_MARIO_RED
         canvas.drawRect(x + 3*s, y, x + 13*s, y + 3*s, paint)
-        // Cap brim
         canvas.drawRect(x + 2*s, y + 3*s, x + 14*s, y + 4.5f*s, paint)
 
-        // Face (skin)
-        paint.color = Color.parseColor("#FFBB88")
+        paint.color = COLOR_MARIO_SKIN
         canvas.drawRect(x + 2*s, y + 4.5f*s, x + 14*s, y + 8*s, paint)
 
-        // Eyes
-        paint.color = Color.parseColor("#111111")
+        paint.color = COLOR_MARIO_EYES
         canvas.drawRect(x + 5*s, y + 5*s, x + 7*s, y + 7*s, paint)
         canvas.drawRect(x + 10*s, y + 5*s, x + 12*s, y + 7*s, paint)
 
-        // Mustache
-        paint.color = Color.parseColor("#884400")
+        paint.color = COLOR_MARIO_MUSTACHE
         canvas.drawRect(x + 3*s, y + 7*s, x + 13*s, y + 8.5f*s, paint)
 
-        // Red shirt / body
-        paint.color = Color.parseColor("#CC2200")
+        paint.color = COLOR_MARIO_RED
         canvas.drawRect(x + 1*s, y + 8.5f*s, x + 15*s, y + 12*s, paint)
 
-        // Blue overalls straps
-        paint.color = Color.parseColor("#0033BB")
+        paint.color = COLOR_MARIO_OVERALLS
         canvas.drawRect(x + 4*s, y + 10*s, x + 7*s, y + 16*s, paint)
         canvas.drawRect(x + 9*s, y + 10*s, x + 12*s, y + 16*s, paint)
-        // Overall sides
         canvas.drawRect(x + 1*s, y + 12*s, x + 15*s, y + 14*s, paint)
 
-        // Shoes (dark brown)
-        paint.color = Color.parseColor("#4A2800")
+        paint.color = COLOR_MARIO_SHOES
         if (isWalking) {
-            // Alternate leg positions
             canvas.drawRect(x + 1*s, y + 13.5f*s, x + 7*s, y + 16*s, paint)
             canvas.drawRect(x + 9*s, y + 14.5f*s, x + 15*s, y + 16*s, paint)
         } else {
