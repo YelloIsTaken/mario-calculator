@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mario Calculator</string>
+    <string name="unit_converter">Unit Converter</string>
+    <string name="help">Help</string>
+    <string name="memory_label">MEMORY</string>
+    <string name="history_hint">HISTORY</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_unit_converter">Unit Converter</string>
+    <string name="btn_help">Help</string>
+    <string name="exit_title">Exit</string>
+    <string name="exit_message">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="help_content"><![CDATA[
+MARIO CALCULATOR — BUTTON GUIDE
+
+── MEMORY BUTTONS ──────────────────
+MC  Memory Clear
+    Resets the stored memory value to 0.
+
+MR  Memory Recall
+    Loads the memory value into the display.
+
+M−  Memory Subtract
+    Subtracts the current display value from memory.
+
+M+  Memory Add
+    Adds the current display value to memory.
+
+── CLEAR BUTTONS ────────────────────
+C   Clear All
+    Resets the current calculation entirely.
+
+CE  Clear Entry
+    Clears the last number entered, keeping
+    any pending operator.
+
+── NUMBER BUTTONS ───────────────────
+0–9  Enter digits.
+00   Enter double zero shortcut.
+.    Decimal point.
+
+── OPERATOR BUTTONS ─────────────────
++   Addition
+−   Subtraction
+×   Multiplication
+÷   Division
+%   Percentage
+    After typing a number, press % to convert
+    it to a percentage of the previous value
+    (or divide by 100 if standalone).
+
+=   Equals — compute the result.
+
+── NAVIGATION ───────────────────────
+Unit Converter
+    Convert between units of length, weight,
+    temperature, area, volume, and speed.
+
+Help
+    Display this help screen.
+
+Exit
+    Close the application.
+
+── HISTORY ──────────────────────────
+Each completed calculation is logged in the
+HISTORY panel at the top of the screen.
+
+── MEMORY DISPLAY ───────────────────
+The MEMORY value is shown at the top right.
+It persists across calculations until MC is
+pressed.
+    ]]></string>
+</resources>
