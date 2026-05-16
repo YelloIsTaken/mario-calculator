@@ -93,7 +93,7 @@ class CalculatorEngine {
     fun percentage() {
         if (errorState) return
         val value = currentValue()
-        val result = if (pendingOperator == "+" || pendingOperator == "-") {
+        val result = if (pendingOperator == "+" || pendingOperator == "−") {
             previousValue * value / 100.0
         } else {
             value / 100.0

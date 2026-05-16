@@ -29,7 +29,7 @@
         <Button
             android:id="@+id/btn_help_back"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_height="48dp"
             android:text="@string/back_label"
             android:textColor="@color/color_white"
             android:textSize="12sp"

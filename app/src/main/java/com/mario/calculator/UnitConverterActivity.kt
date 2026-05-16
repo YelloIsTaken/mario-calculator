@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.text.NumberFormat
-import java.text.ParseException
+import java.text.ParsePosition
 import java.util.Locale
 
 class UnitConverterActivity : AppCompatActivity() {
@@ -145,10 +145,11 @@ class UnitConverterActivity : AppCompatActivity() {
 
     private fun recalculate() {
         val text = etFromValue.text.toString().trim()
-        val input: Double? = if (text.isEmpty()) null else try {
-            NumberFormat.getInstance(Locale.getDefault()).parse(text)?.toDouble()
-        } catch (e: ParseException) {
-            null
+        val input: Double? = if (text.isEmpty()) null else {
+            val fmt = NumberFormat.getInstance(Locale.getDefault())
+            val pos = ParsePosition(0)
+            val parsed = fmt.parse(text, pos)
+            if (parsed != null && pos.index == text.length) parsed.toDouble() else null
         }
         if (input == null) { tvToValue.text = getString(R.string.placeholder_em_dash); return }
 
