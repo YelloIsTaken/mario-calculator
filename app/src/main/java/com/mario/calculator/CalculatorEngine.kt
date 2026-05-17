@@ -157,6 +157,9 @@ class CalculatorEngine {
         if (display != "0" && display != "Error") currentInput.append(display)
         hasDecimal = display.contains(".")
         errorState = display == "Error"
+        justCalculated = true
+        pendingOperator = null
+        previousValue = 0.0
     }
 
     private fun currentValue(): Double =
