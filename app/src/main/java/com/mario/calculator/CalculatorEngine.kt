@@ -49,7 +49,7 @@ class CalculatorEngine {
         if (pendingOperator != null && currentInput.isNotEmpty() && !justCalculated) {
             val rhs = currentInputToDouble() ?: return
             val result = applyOp(previousValue, rhs, pendingOperator!!)
-            if (result == null) {
+            if (result == null || !result.isFinite()) {
                 displayValue = "Error"
                 errorState = true
                 return
@@ -75,7 +75,7 @@ class CalculatorEngine {
         if (errorState || pendingOperator == null) return
         val rhs = if (currentInput.isNotEmpty()) currentInputToDouble() ?: return else previousValue
         val result = applyOp(previousValue, rhs, pendingOperator!!)
-        if (result == null) {
+        if (result == null || !result.isFinite()) {
             displayValue = "Error"
             errorState = true
             return
@@ -91,8 +91,8 @@ class CalculatorEngine {
     }
 
     fun percentage() {
-        if (errorState) return
-        val value = currentValue()
+        if (errorState || currentInput.isEmpty()) return
+        val value = currentInput.toString().toDoubleOrNull() ?: return
         val result = if (pendingOperator == "+" || pendingOperator == "−") {
             previousValue * value / 100.0
         } else {
