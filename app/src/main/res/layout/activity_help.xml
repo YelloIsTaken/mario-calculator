@@ -22,10 +22,9 @@
             android:layout_weight="1"
             android:text="@string/help_label"
             android:textColor="@color/color_cyan"
-            android:textSize="20sp"
-            android:fontFamily="monospace"
-            android:textStyle="bold"
-            android:letterSpacing="0.15" />
+            android:textSize="14sp"
+            android:fontFamily="@font/press_start_2p"
+            android:letterSpacing="0.05" />
 
         <Button
             android:id="@+id/btn_help_back"
@@ -33,8 +32,8 @@
             android:layout_height="48dp"
             android:text="@string/back_label"
             android:textColor="@color/color_white"
-            android:textSize="12sp"
-            android:fontFamily="monospace"
+            android:textSize="8sp"
+            android:fontFamily="@font/press_start_2p"
             android:background="@drawable/btn_nav"
             android:insetTop="0dp"
             android:insetBottom="0dp"
@@ -54,9 +53,9 @@
             android:layout_height="wrap_content"
             android:text="@string/help_content"
             android:textColor="@color/color_help_text"
-            android:textSize="13sp"
-            android:fontFamily="monospace"
-            android:lineSpacingMultiplier="1.4" />
+            android:textSize="8sp"
+            android:fontFamily="@font/press_start_2p"
+            android:lineSpacingMultiplier="1.8" />
     </ScrollView>
 
 </LinearLayout>

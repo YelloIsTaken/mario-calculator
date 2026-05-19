@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Backgrounds -->
-    <color name="bg_dark">#0D0D12</color>
-    <color name="bg_header">#0A2030</color>
+    <color name="bg_dark">#080C18</color>
+    <color name="bg_header">#0A1C2C</color>
     <color name="bg_display">#000000</color>
-    <color name="bg_nav">#0A1A0A</color>
+    <color name="bg_nav">#081808</color>
 
     <!-- Text -->
     <color name="color_cyan">#00FFCC</color>
-    <color name="color_green">#00CC44</color>
+    <color name="color_green">#00DD44</color>
     <color name="color_white">#FFFFFF</color>
-    <color name="color_dark_text">#1A1A1A</color>
+    <color name="color_dark_text">#2A1800</color>
 
-    <!-- Number buttons (cream/tan) -->
-    <color name="btn_number_bg">#D4B483</color>
-    <color name="btn_number_pressed">#A08055</color>
-    <color name="btn_number_border">#7A5010</color>
+    <!-- Number buttons (warm cream/ivory like DSiWare) -->
+    <color name="btn_number_bg">#E0CB90</color>
+    <color name="btn_number_pressed">#A89060</color>
+    <color name="btn_number_border">#705010</color>
 
-    <!-- Memory buttons (green) -->
-    <color name="btn_memory_bg">#4A8A4A</color>
-    <color name="btn_memory_pressed">#2A6A2A</color>
-    <color name="btn_memory_border">#1A5A1A</color>
+    <!-- Memory buttons (forest green like DSiWare) -->
+    <color name="btn_memory_bg">#2E7034</color>
+    <color name="btn_memory_pressed">#1A5020</color>
+    <color name="btn_memory_border">#0F4018</color>
 
-    <!-- Clear button (red-orange) -->
-    <color name="btn_clear_bg">#CC4400</color>
-    <color name="btn_clear_pressed">#993300</color>
-    <color name="btn_clear_border">#881100</color>
+    <!-- Clear button (vivid red like DSiWare) -->
+    <color name="btn_clear_bg">#CC1E00</color>
+    <color name="btn_clear_pressed">#991400</color>
+    <color name="btn_clear_border">#770A00</color>
 
-    <!-- Operator buttons (golden) -->
-    <color name="btn_operator_bg">#C89020</color>
-    <color name="btn_operator_pressed">#A07008</color>
-    <color name="btn_operator_border">#806000</color>
+    <!-- Operator buttons (orange-amber like DSiWare) -->
+    <color name="btn_operator_bg">#C86200</color>
+    <color name="btn_operator_pressed">#943E00</color>
+    <color name="btn_operator_border">#6A2800</color>
 
-    <!-- Nav buttons -->
-    <color name="btn_nav_bg">#2A7A2A</color>
-    <color name="btn_nav_pressed">#1A5A1A</color>
-    <color name="btn_nav_border">#0A4A0A</color>
+    <!-- Nav buttons (dark forest green) -->
+    <color name="btn_nav_bg">#1A5C20</color>
+    <color name="btn_nav_pressed">#0E3C14</color>
+    <color name="btn_nav_border">#082A0A</color>
 
     <!-- Miscellaneous UI -->
     <color name="color_help_text">#CCCCCC</color>
     <color name="color_hint">#888888</color>
     <color name="color_divider_subtle">#333333</color>
 
-    <!-- Equals button (slightly different gold) -->
-    <color name="btn_equals_bg">#B88010</color>
-    <color name="btn_equals_pressed">#906000</color>
-    <color name="btn_equals_border">#604000</color>
+    <!-- Equals button (dark amber-gold like DSiWare) -->
+    <color name="btn_equals_bg">#A06000</color>
+    <color name="btn_equals_pressed">#704000</color>
+    <color name="btn_equals_border">#4A2800</color>
 </resources>

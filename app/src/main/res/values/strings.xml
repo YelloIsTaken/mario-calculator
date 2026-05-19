@@ -5,9 +5,9 @@
     <string name="help">Help</string>
     <string name="memory_label">MEMORY</string>
     <string name="history_hint">HISTORY</string>
-    <string name="btn_exit">Exit</string>
-    <string name="btn_unit_converter">Unit Converter</string>
-    <string name="btn_help">Help</string>
+    <string name="btn_exit">EXIT</string>
+    <string name="btn_unit_converter">CONVERT</string>
+    <string name="btn_help">HELP</string>
     <string name="exit_title">Exit</string>
     <string name="exit_message">Are you sure you want to exit?</string>
     <string name="yes">Yes</string>
@@ -16,7 +16,7 @@
     <string name="placeholder_em_dash">—</string>
     <string name="conversion_error">Error</string>
     <string name="help_label">HELP</string>
-    <string name="back_label">← BACK</string>
+    <string name="back_label">&lt; BACK</string>
     <string name="unit_converter_title">UNIT CONVERTER</string>
     <string name="unit_converter_category_label">Category:</string>
     <string name="unit_converter_from_label">FROM</string>

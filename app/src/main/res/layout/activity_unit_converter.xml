@@ -13,12 +13,11 @@
         android:layout_height="wrap_content"
         android:text="@string/unit_converter_title"
         android:textColor="@color/color_cyan"
-        android:textSize="20sp"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:textSize="11sp"
+        android:fontFamily="@font/press_start_2p"
         android:gravity="center"
         android:paddingBottom="16dp"
-        android:letterSpacing="0.1" />
+        android:letterSpacing="0.05" />
 
     <!-- Category Spinner -->
     <TextView
@@ -26,9 +25,9 @@
         android:layout_height="wrap_content"
         android:text="@string/unit_converter_category_label"
         android:textColor="@color/color_green"
-        android:textSize="13sp"
-        android:fontFamily="monospace"
-        android:paddingBottom="4dp" />
+        android:textSize="8sp"
+        android:fontFamily="@font/press_start_2p"
+        android:paddingBottom="6dp" />
 
     <Spinner
         android:id="@+id/spinner_category"
@@ -40,7 +39,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="@color/color_green"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp" />
@@ -51,9 +50,8 @@
         android:layout_height="wrap_content"
         android:text="@string/unit_converter_from_label"
         android:textColor="@color/color_cyan"
-        android:textSize="13sp"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:textSize="9sp"
+        android:fontFamily="@font/press_start_2p"
         android:paddingBottom="6dp" />
 
     <LinearLayout
@@ -81,8 +79,8 @@
             android:textColorHint="@color/color_hint"
             android:hint="0"
             android:inputType="numberDecimal|numberSigned"
-            android:textSize="18sp"
-            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:fontFamily="@font/press_start_2p"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:gravity="center_vertical|end" />
@@ -101,9 +99,8 @@
         android:layout_height="wrap_content"
         android:text="@string/unit_converter_to_label"
         android:textColor="@color/color_cyan"
-        android:textSize="13sp"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:textSize="9sp"
+        android:fontFamily="@font/press_start_2p"
         android:paddingBottom="6dp" />
 
     <LinearLayout
@@ -129,8 +126,8 @@
             android:background="@drawable/bg_display"
             android:textColor="@color/color_cyan"
             android:text="0"
-            android:textSize="18sp"
-            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:fontFamily="@font/press_start_2p"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:gravity="center_vertical|end"
@@ -140,7 +137,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="@color/color_green"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp" />
@@ -152,9 +149,8 @@
         android:layout_height="50dp"
         android:text="@string/back_label"
         android:textColor="@color/color_white"
-        android:textSize="15sp"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:textSize="9sp"
+        android:fontFamily="@font/press_start_2p"
         android:background="@drawable/btn_nav"
         android:insetTop="0dp"
         android:insetBottom="0dp" />
