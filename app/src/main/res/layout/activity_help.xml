@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_header"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_label"
+            android:textColor="@color/color_cyan"
+            android:textSize="14sp"
+            android:fontFamily="@font/press_start_2p"
+            android:letterSpacing="0.05" />
+
+        <Button
+            android:id="@+id/btn_help_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/back_label"
+            android:textColor="@color/color_white"
+            android:textSize="8sp"
+            android:fontFamily="@font/press_start_2p"
+            android:background="@drawable/btn_nav"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+    </LinearLayout>
+
+    <!-- Scrollable Help Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/help_content"
+            android:textColor="@color/color_help_text"
+            android:textSize="8sp"
+            android:fontFamily="@font/press_start_2p"
+            android:lineSpacingMultiplier="1.8" />
+    </ScrollView>
+
+</LinearLayout>
